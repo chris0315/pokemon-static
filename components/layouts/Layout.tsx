@@ -5,7 +5,6 @@ interface typeLayout {
 	children: JSX.Element;
 	title?: string;
 }
-nex;
 const origin =
 	typeof window === "undefined"
 		? ""
