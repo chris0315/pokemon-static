@@ -7,14 +7,18 @@ import {
 export const getPokemonInfo = async (
 	nameOrId: string
 ) => {
-	const pokemon: PokemonTypeDetail = await pokeApi(
-		`/pokemon/${nameOrId}`
-	);
+	try {
+		const pokemon: PokemonTypeDetail = await pokeApi(
+			`/pokemon/${nameOrId}`
+		);
 
-	return {
-		id: pokemon.id,
-		name: pokemon.name,
-		sprites: pokemon.sprites,
-		types: pokemon.types,
-	};
+		return {
+			id: pokemon.id,
+			name: pokemon.name,
+			sprites: pokemon.sprites,
+			types: pokemon.types,
+		};
+	} catch (err) {
+		return null;
+	}
 };
